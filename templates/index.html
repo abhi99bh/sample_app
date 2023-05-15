@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FastAPI Sample API</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}">
+  </head>
+  <body>
+    <h1>FastAPI Sample API</h1>
+    <form method="post">
+      <label for="item1">Item 1:</label>
+      <input type="text" id="item1" name="item1"><br>
+
+      <label for="item2">Item 2:</label>
+      <input type="text" id="item2" name="item2"><br>
+
+      <input type="submit" value="Submit">
+    </form>
+
+    {% if item1 and item2 %}
+    <h2>You selected:</h2>
+    <ul>
+      <li>Item 1: {{ item1 }}</li>
+      <li>Item 2: {{ item2 }}</li>
+    </ul>
+    {% endif %}
+  </body>
+</html>
+
+{% if item1 %}
+<h2>Item 1 price: ${{ item1_price }}</h2>
+{% endif %}
+
+{% if item2 %}
+<h2>Item 2 price: ${{ item2_price }}</h2>
+{% endif %}
